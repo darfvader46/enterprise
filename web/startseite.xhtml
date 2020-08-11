@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+            <h:dataTable id="tbBauplaene"
+                         value="#{startseiteBean.account.handwerker.skills}"
+                         var="skill"
+                         border="1">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Handwerker" />
+                    </f:facet>
+                    <h:outputText value="#{skill.handwerker.vorname} #{skill.handwerker.nachname}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Skill" />
+                    </f:facet>
+                    <h:outputText value="#{skill.skillwert}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Erstellen" />
+                    </f:facet>
+                    <h:form>
+                        <h:selectOneMenu id="materialListe"
+                                         value="#{startseiteBean.materialId}"
+                                         required="true"
+                                         requiredMessage="MaterialKategorie muss ausgewählt sein">
+                            <f:selectItems value="#{startseiteBean.holeMaterialenProKategorie(skill.bauplan.materialKategorie)}"
+                                           var="material"
+                                           itemLabel="#{material.bezeichnung}"
+                                           itemValue="#{material.id}"/>
+                        </h:selectOneMenu>
+                        <h:commandButton value="#{skill.bauplan.bezeichnung}" action="#{startseiteBean.erzeugeItem(skill)}" />
+                    </h:form>
+                </h:column>
+
+            </h:dataTable>
+            <h:dataTable id="tbItem"
+                         value="#{startseiteBean.account.items}"
+                         var="item"
+                         border="1"
+                         rendered="#{startseiteBean.account.items.size() gt 0}">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Gegenstand" />
+                    </f:facet>
+                    <h:outputText value="#{item.bauplan.bezeichnung} (#{item.material.bezeichnung})" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Qualität" />
+                    </f:facet>
+                    <h:outputText value="#{item.qualitaet}%" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Angriff" />
+                    </f:facet>
+                    <h:outputText value="#{item.angriff}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Verteidigung" />
+                    </f:facet>
+                    <h:outputText value="#{item.verteidigung}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Schaden" />
+                    </f:facet>
+                    <h:outputText value="#{item.schaden}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Rüstung" />
+                    </f:facet>
+                    <h:outputText value="#{item.ruestung}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Preis" />
+                    </f:facet>
+                    <h:outputText value="#{item.preis}" />
+                </h:column>
+                <h:column>
+                    <h:form>
+                        <h:commandButton value="verkaufen" action="#{startseiteBean.verkaufen(item)}" />
+                    </h:form>
+                </h:column>
+            </h:dataTable>
+        <h:outputText value="#{startseiteBean.kupfermuenzenAusgabe}" />
+    </h:body>
+</html>
