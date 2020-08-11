@@ -9,7 +9,9 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 /**
- *
+ * Objekte dieser Klasse stellen das verwendete Material beim Erstellen eines Items dar
+ * Die MaterialKategorie besagt, dass ein Messer nur aus Metall angefertigt werden darf
+ * Das Material kann jedoch genauer unterteilt werden, bspw. in Bronze, Eisen, Mithril, Adamant (alles Metalle)
  * @author Patrick
  */
 

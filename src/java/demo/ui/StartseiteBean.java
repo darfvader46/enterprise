@@ -19,6 +19,7 @@ import javax.inject.Named;
 @SessionScoped
 public class StartseiteBean implements Serializable {
     
+    // muss aktuell gehalten werden
     private Account account;
     
     private String kupfermuenzenAusgabe;
@@ -30,7 +31,9 @@ public class StartseiteBean implements Serializable {
     
     @PostConstruct
     public void init() {
+        // Ladet den Account nach dem erfolgreichen Login aus dem Kontext
         account = (Account)FacesContext.getCurrentInstance().getAttributes().get("account");
+        // Rechnet die Kupfermünzen des Accounts um, damit die Anzeige schöner ist
         anpassenKupfermuenzen();
     }   
 
@@ -71,6 +74,12 @@ public class StartseiteBean implements Serializable {
         anpassenKupfermuenzen();
     }
     
+    /**
+     * Rechnet die Anzahl der Kupfermünzen in Platin Gold Silber Kupfer um
+     * 1 Silber = 10 Kupfer
+     * 1 Gold = 100 Kupfer
+     * 1 Platin = 1000 Kupfer
+     */
     private void anpassenKupfermuenzen() {
         long muenzen = account.getKupfermuenzen();
         

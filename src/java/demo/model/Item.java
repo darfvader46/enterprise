@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 /**
- *
+ * Objekte dieser Klasse stellen einen erzeugten Gegenstand eines Handwerkers dar
  * @author Patrick
  */
 @Entity
@@ -39,6 +39,7 @@ public class Item implements Serializable {
         Random gen = new Random();
         this.bauplan = skill.getBauplan();
         this.material = material;
+        // Würfeln der Qualität, wobei die Qualität vom Skillwert des Handwerkers in diesem Bauplan abhängt
         this.qualitaet = ANFANGSQUALITAET + (QUALITAETSSTEIGERUNG * skill.getSkillwert())  + gen.nextInt(20);
     }
 

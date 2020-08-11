@@ -14,6 +14,13 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+/**
+ * Objekte dieser Klasse stellen einen Account dar
+ * Nach bisherige Lösung besitzt ein Account genau einen Handwerker
+ * Aus Sicherheitsgründen wird das Passwort des Accounts wird gehashed, #
+ * diese Aufgaben übernimmt der Generator
+ * @author Patrick
+ */
 @Entity
 @NamedQueries({
     @NamedQuery(name = "Account.CountByName", query = "SELECT COUNT(a.id) FROM Account a WHERE a.username = :username"),

@@ -10,7 +10,10 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 
 /**
- *
+ * Objekte dieser Klasse stellen ein Bauplan dar
+ * Zu Beginn sind für einen neu erstellten Handwerker folgende Baupläne vorhanden: Messer, Pelzumhang, Wanderstecken
+ * Sobald im Bauplan Messer ein bestimmter Skillwert erreicht wird, wird der Bauplan Dolch freigeschaltet.
+ * Dies gilt auch für andere Baupläne
  * @author Patrick
  */
 @Entity
@@ -27,8 +30,11 @@ public class Bauplan implements Serializable {
     
     private String bezeichnung;
     
+    // Ab welchen Skillwert im Vorgänger wird der neue Bauplan freigeschaltet
     private int skillImVorgaenger;
     
+    // Welcher Bauplan ist der Vorgang: Bspw. für Bauplan Dolch ist der Bauplan Messer der Vorgänger
+    // Für Messer ist der Vorgänger null, weil er standardmäßig schon vorhanden ist
     @OneToOne
     private Bauplan vorgaenger;
     

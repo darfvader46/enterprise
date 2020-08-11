@@ -1,7 +1,8 @@
 package demo.exceptions;
 
 /**
- *
+ * Wird geworfen, falls der Username existiert,
+ * aber das angegebene Passwort falsch ist
  * @author pgmeinwi
  */
 public class InvalidKombinationException extends Exception {

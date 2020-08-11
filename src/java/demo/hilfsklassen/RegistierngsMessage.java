@@ -1,5 +1,11 @@
 package demo.hilfsklassen;
 
+
+/**
+ * Nachricht die dem Anwender mitteilt,
+ * ob die Registration erfolgreich war oder nicht
+ * @author Patrick
+ */
 public class RegistierngsMessage {
     
     private String rueckmeldung = "";

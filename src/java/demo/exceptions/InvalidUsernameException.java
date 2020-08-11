@@ -2,7 +2,7 @@
 package demo.exceptions;
 
 /**
- *
+ * Wird geworfen falls der angefragte Username nicht exisitiert
  * @author pgmeinwi
  */
 public class InvalidUsernameException extends Exception {

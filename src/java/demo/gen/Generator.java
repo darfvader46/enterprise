@@ -5,6 +5,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
+/**
+ * Generator, der das Hashen und Salten des Passwortes
+ * beim erstellen eines Accounts vornimmt
+ * @author Patrick
+ */
 public abstract class Generator {
     
     public static final int SALT_LENGTH = 10;

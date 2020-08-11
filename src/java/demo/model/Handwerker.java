@@ -11,7 +11,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.TableGenerator;
 
 /**
- *
+ * Objekte dieser Klasse beschreiben einen Handwerker
+ * Ein Handwerker ist in der Lage verschiedene Gegenstände zu erzeugen (Baupläne: Messer, Pelzumhang, usw.)
+ * Nach jedem Erstellen wird eine Zufallszahl gewürfelt und Skill des Handwerkers kann sich in diesem Bauplan steigern
+ * Somit verbessert der Handweker seine Qualität in dem ausgewählten Bauplan und kann neue Baupläne (bspw. Dolch) freischalten
  * @author Patrick
  */
 

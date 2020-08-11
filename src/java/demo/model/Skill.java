@@ -12,7 +12,9 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
 /**
- *
+ * Objekte dieser Klasse stellen den Skill eines Handwerkers in einem bestimmten Bauplan dar
+ * Der Skill des Handwerkers kann sich in diesem Bauplan nach Vollendung eines Items erhöhen
+ * Dadurch verbessert der Handwerker seine Qulität in diesem Bauplan und kann neue Gegenstände freischalten
  * @author Patrick
  */
 

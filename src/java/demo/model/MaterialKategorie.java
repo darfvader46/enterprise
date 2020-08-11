@@ -1,7 +1,7 @@
 package demo.model;
 
 /**
- *
+ * Das Material-Enum für die jeweiligen Baupläne
  * @author Patrick
  */
 
